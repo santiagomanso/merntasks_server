@@ -15,7 +15,7 @@ connectDB();
 server.use(express.json({ extended: true }))
 
 //create port
-const PORT = process.env.port || 4000;
+const PORT = process.env.PORT || 4000;
 
 //import routes
 server.use('/api/users', require('./routes/users'));

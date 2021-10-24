@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config({path: 'variables.env'});
+require('dotenv').config({ path: 'variables.env' });
 
 const connectDB = async () =>{
     try {
@@ -9,7 +9,7 @@ const connectDB = async () =>{
         });
         console.log('DB connected succesfully');
     } catch (error) {
-        console.log(error);
+        console.log("Could not connect to database this is the CATCH", error);
         process.exit(1); //stop server
     }
 }
