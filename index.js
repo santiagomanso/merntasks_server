@@ -11,11 +11,11 @@ const server = express();
 connectDB();
 
 //enable cors
-server.use(cors())
+server.use(cors({ credentials: true, origin: 'https://merntaskstwo.herokuapp.com/' }));
 server.options('*', cors());
 
 //enable express.json 
-server.use(express.json({ extended: true }))
+server.use(express.json({ extended: true }));
 
 //create port
 const port = process.env.PORT || 4000;
