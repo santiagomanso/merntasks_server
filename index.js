@@ -6,17 +6,15 @@ const cors = require('cors');
 //create server
 const server = express();
 
-//enable CORS
-server.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-    });
-
 //connect DB
 connectDB();
 
-
+//enable CORS
+server.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
 
 //enable express.json 
 server.use(express.json({ extended: true }))
