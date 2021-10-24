@@ -10,12 +10,11 @@ const server = express();
 connectDB();
 
 //enable CORS
-server.use(
-    cors({
-        origin: "*",
-        methods: ["GET", "POST", "PUT", "DELETE", ]
-    })
-)
+server.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+    });
 
 //enable express.json 
 server.use(express.json({ extended: true }))
