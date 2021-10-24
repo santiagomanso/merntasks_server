@@ -15,7 +15,7 @@ connectDB();
 server.use(express.json({ extended: true }))
 
 //create port
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 //import routes
 server.use('/api/users', require('./routes/users'));
@@ -24,6 +24,6 @@ server.use('/api/projects', require('./routes/projects'));
 server.use('/api/tasks', require('./routes/tasks'));
 
 //start server
-server.listen(PORT, ()=> {
-    console.log(`The server is currently running on the port:${PORT}`);
+server.listen(port, '0.0.0.0' , ()=> {
+    console.log(`The server is currently running on the port:${port}`);
 })
