@@ -1,7 +1,7 @@
 
 const express = require('express');
 const connectDB = require('./config/db');
-const cors = require('cors');
+
 
 //create server
 const server = express();
@@ -17,9 +17,7 @@ server.use(express.json({ extended: true }))
 //create port
 const port = process.env.PORT || 4000;
 
-//enable cors
-    const whiteList = 'https://sharp-thompson-4f9c50.netlify.app/';
-server.use(cors( { origin: whiteList } ));
+
 
 //import routes
 server.use('/api/users', require('./routes/users'));

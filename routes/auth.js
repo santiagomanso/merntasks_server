@@ -5,9 +5,11 @@ const router = express.Router();
 const { check } = require('express-validator');
 const authController = require('../controllers/authController');
 const auth = require('../middleware/auth');
+const cors = require('cors');
 
-
-
+//enable cors
+const whiteList = 'https://sharp-thompson-4f9c50.netlify.app/';
+server.use(cors( { origin: whiteList } ));
 
 
 //Log In
