@@ -5,10 +5,9 @@ const router = express.Router();
 const { check } = require('express-validator');
 const authController = require('../controllers/authController');
 const auth = require('../middleware/auth');
-const cors = require('cors');
 
-//trying here cors
-server.use(cors());
+
+
 
 
 //Log In
