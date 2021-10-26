@@ -8,7 +8,7 @@ const auth = require('../middleware/auth');
 const cors = require('cors');
 
 //enable cors
-const whiteList = 'https://sharp-thompson-4f9c50.netlify.app/';
+const whiteList = '*';
 server.use(cors( { origin: whiteList } ));
 
 
