@@ -1,15 +1,18 @@
 
 const express = require('express');
 const connectDB = require('./config/db');
+const cors = require('cors');
 
+
+//enable cors
+const whiteList = '*';
+server.use(cors( { origin: whiteList } ));
 
 //create server
 const server = express();
 
 //connect DB
 connectDB();
-
-
 
 //enable express.json 
 server.use(express.json({ extended: true }))
